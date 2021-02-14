@@ -8,7 +8,7 @@ body{
 } 
 .content{
     border-bottom: 1px solid #eee;
-    padding: 16px 0;
+    padding: 20px 1;
     overflow: hidden;
 }
 
@@ -57,7 +57,7 @@ nav a:hover{
 }
 
 .top-title{
-    font: 36px;
+    font: 50px;
     padding-left: 8px;
     margin-bottom: 16px;
     color: #555;
@@ -66,12 +66,17 @@ nav a:hover{
 }
 
 
-img{float: left;}
+.pic{
+  width: 300px;
+  margin: 0 auto
+}
 
 h2{
     color: #FFA500;
 }
 p{margin-bottom: 16px;}
+
+.video{width: 100%}
 
 a.fbbutton{
     margin-top: 16px;
@@ -90,14 +95,12 @@ a.fbbutton:hover {
 }
 
 .right-box{
-    float:left;
-    width:288px;
-    margin-left:18px;
+    width:500px;
+    margin: 0 auto;
 }
 
 .left-box{
-    float: left;
-    width: 288px;
+   
     margin-right: 18px;
 }
 
@@ -111,16 +114,16 @@ padding-top: 60px;
 }
 
 #main{
-width: 608px;
+width: 100%;
 margin: 0 auto;
 overflow: hidden;
 background: #fff;
 padding: 16px;
-float:left;
+float:center;
 }
 
 .wrapper{
-width: 960px;
+width: 100%;
 margin: 0 auto;
 }
 
@@ -154,5 +157,105 @@ margin-bottom: 8px;
 font-size: 16px;
 }
 
+.kv{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.kv .main-copy{
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: .2em;
+  margin-bottom: 5px;
+}
+
+.kv .sub-copy{
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .kv{
+    min-width: 960px;
+  }
+
+  .kv .main-copy{
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+
+  .kv .sub-copy{
+    font-size: 30px;
+  }
+}
+
+.video{
+  width: 100%;
+  height: 780px;
+  position: absolute;
+  top: 0;/* */
+  left: 0;
+  overflow: hidden; /*親要素からのはみ出しを削る　常に合わせる方法調べる*/
+  z-index: -10;　　　/*マイナス値を指定し、kvより下に配置 */
+}
+
+.video::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #10394b;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .3;
+}
+
+.video video{
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .video{
+    min-width: 768px;
+  }
+
+  .video video{
+    display: block;
+    min-width: 100%;
+    min-height: 100%;/*100％を指定することで、余白ができるのを防 */
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+ #main h1 {
+   width: 300px;
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem 2rem 1.5rem 130px;
+  border: 2px solid #000;
+}
+
+#main h1:before {
+  position: absolute;
+  top: -150%;
+  left: -100px;
+  width: 200px;
+  height: 300%;
+  content: '';
+  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  background: #afeeee;
+}
 
